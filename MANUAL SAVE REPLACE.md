@@ -20,7 +20,9 @@ Android may restrict access to `Android/data` in some file managers. Use a conne
 
 Finish an **unencrypted** backup using Apple Devices on Windows. Its usual backup root is `%USERPROFILE%\Apple\MobileSync\Backup`; open the device's backup folder inside it. If you moved backups to another drive using [IPHONE USERS.md](IPHONE%20USERS.md), you can also open the destination folder there. The device backup folder contains `Manifest.db` and folders named with two hexadecimal characters.
 
-The iPhone backup stores the BALL x PIT files under hashed names. Copy each file from the device backup into a **new** folder on the PC and rename the *copy* as shown:
+The iPhone backup stores the BALL x PIT files under hashed names. **These IDs are calculated from the app domain and file path, not from the individual iPhone.** They should be the same on another iPhone *if* BALL x PIT uses the same app domain and `Documents` paths there. We have verified these mappings on one real iPhone backup; check `Manifest.db` on other backups rather than assuming the files are present.
+
+Expected files to copy into a **new** folder on the PC (rename only the *copies*):
 
 | File inside the device backup folder | Name for your extracted copy |
 | --- | --- |
@@ -28,7 +30,20 @@ The iPhone backup stores the BALL x PIT files under hashed names. Copy each file
 | `e0\e06149a3696bc715467ac551cac4a6c918a95864` | `meta1_backup.yankai` |
 | `5a\5a1cf4960a7185d21cb020d5824506caf1a8580a` | `saveslotinfo.balls` |
 
-These names are derived from BALL x PIT's iPhone app domain and `Documents` paths. If the files are absent, check that you opened the correct completed backup and that the backup is unencrypted. Do not rename or move the files *inside* the Apple backup.
+To verify a different iPhone backup, open its `Manifest.db` with a SQLite viewer and run:
+
+```sql
+SELECT relativePath, fileID
+FROM Files
+WHERE domain = 'AppDomain-com.devolverdigital.ballxpit'
+  AND relativePath IN (
+    'Documents/meta1.yankai',
+    'Documents/meta1_backup.yankai',
+    'Documents/saveslotinfo.balls'
+  );
+```
+
+Use the `fileID` values returned by **that** backup. Each physical file is under the folder named by its first two ID characters. If a row or file is absent, check that you opened the correct completed, unencrypted backup; a game update could also change the app's storage paths. Do not rename or move files *inside* the Apple backup.
 
 ## 2. Prepare a PC slot
 
