@@ -1,5 +1,5 @@
 # BALL x PIT Save Transfer 
---- Back up your PC save file this program replaces your save --
+--- Back up your PC save file this program replaces your save slot --
 
 A small Windows app for copying a BALL x PIT iPhone or Android save into an existing PC save slot. It copies the save files directly; it does not edit their contents or merge two saves.
 
