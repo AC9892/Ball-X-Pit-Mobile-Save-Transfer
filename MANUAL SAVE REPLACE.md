@@ -30,7 +30,7 @@ Expected files to copy into a **new** folder on the PC (rename only the *copies*
 | `e0\e06149a3696bc715467ac551cac4a6c918a95864` | `meta1_backup.yankai` |
 | `5a\5a1cf4960a7185d21cb020d5824506caf1a8580a` | `saveslotinfo.balls` |
 
-To verify a different iPhone backup, open its `Manifest.db` with a SQLite viewer and run:
+To verify a different iPhone backup, open its `Manifest.db` with a [SQLite viewer](https://sqliteviewer.app/) and run:
 
 ```sql
 SELECT relativePath, fileID
