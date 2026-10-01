@@ -1,5 +1,7 @@
 # iPhone users: put Apple Devices backups on another drive
 
+# when you back-up your IPHONE do not choose encrypted as the tool cannot read it & it will also backup your stored passwords
+
 BALL x PIT Save Transfer can read an **unencrypted** iPhone backup made by Apple Devices on Windows. If your C: drive does not have enough space for that backup, you can point Apple Devices' backup folder to another drive with a Windows junction.
 
 This guide uses the Apple Devices location that worked on our Windows setup: `%USERPROFILE%\Apple\MobileSync\Backup`. Check that this is the folder Apple Devices uses on your PC before running the script. Some older iTunes installations use `%APPDATA%\Apple Computer\MobileSync\Backup` instead; if yours does, change `$source` in the script.
