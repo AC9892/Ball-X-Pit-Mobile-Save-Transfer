@@ -1,7 +1,7 @@
 # BALL x PIT Save Transfer
 
 A small Windows app for copying a BALL x PIT iPhone or Android save into an existing PC save slot. It copies the save files directly; it does not edit their contents or merge two saves.
-if you dont want to use the program check here [Manual File Replace](MANUAL SAVE REPLACE.md)
+if you dont want to use the program check here [Manual File Replace](MANUAL%SAVE%REPLACE.md)
 ## Use it
 
 1. For iPhone, finish an **unencrypted** backup in Apple Devices. For Android, copy `meta1.yankai`, `meta1_backup.yankai`, and `saveslotinfo.balls` from `Android/data/com.devolverdigital.ballxpit/files/` into a folder on your PC. You can also choose a folder containing those three files from another source.
