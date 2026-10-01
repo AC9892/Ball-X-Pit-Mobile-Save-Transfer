@@ -14,6 +14,8 @@ The app refuses to import while `Balls.exe` is running. It backs up all existing
 
 The Apple backup reader recognizes the BALL x PIT iOS app domain `com.devolverdigital.ballxpit` and the save files in its `Documents` folder. Encrypted Apple backups are not supported. Android saves are read from a normal folder containing the three files.
 
+If Apple Devices runs out of space on C:, see [IPHONE USERS.md](IPHONE%20USERS.md) for a fill-in-the-blank PowerShell guide to place backups on another drive.
+
 ## Build from source
 
 `Program.cs` is a Windows Forms app targeting the .NET Framework included with Windows. On a Windows machine with the C# compiler, build it with:
