@@ -1,5 +1,4 @@
-# BALL x PIT Save Transfer 
---- Back up your PC save file this program replaces your save slot --
+# BALL x PIT Save Transfer
 
 A small Windows app for copying a BALL x PIT iPhone or Android save into an existing PC save slot. It copies the save files directly; it does not edit their contents or merge two saves.
 
@@ -19,10 +18,12 @@ If Apple Devices runs out of space on C:, see [IPHONE USERS.md](IPHONE%20USERS.m
 
 ## Build from source
 
-`Program.cs` is a Windows Forms app targeting the .NET Framework included with Windows. On a Windows machine with the C# compiler, build it with:
+This is a Windows Forms app built from `Program.cs`. On Windows, open PowerShell **in the folder containing `Program.cs`** and run:
 
 ```powershell
 & "$env:WINDIR\Microsoft.NET\Framework\v4.0.30319\csc.exe" /nologo /target:winexe "/out:BALL x PIT Save Transfer.exe" /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.Core.dll Program.cs
 ```
 
-`SmokeTests.cs` contains a fixture test for backup lookup, copying, the running-game guard, and slot isolation.
+If compilation succeeds, `BALL x PIT Save Transfer.exe` appears in the same folder. Run that executable to open the app. The compiler is part of the .NET Framework installation on Windows; if the path above does not exist, install or enable .NET Framework 4.x before building.
+
+`SmokeTests.cs` is an optional test harness and is not needed to build the app. It checks backup lookup, copying, the running-game guard, and slot isolation using test save files supplied at runtime.
