@@ -59,7 +59,7 @@ namespace BallXPITSaveTransfer
             Assert(Same(Path.Combine(saved, "meta2.yankai"), Path.Combine(args[2], "meta1.yankai")), "Original slot 2 was not backed up.");
             using (TransferForm form = new TransferForm())
                 Assert(form.Text == "BALL x PIT Save Transfer", "The app window did not initialize.");
-            Console.WriteLine("PASS: Apple backup lookup, extracted saves, slot detection, running-game guard, import, backup, and slot isolation.");
+            Console.WriteLine("PASS: mobile save lookup, slot detection, running-game guard, import, backup, and slot isolation.");
         }
     }
 }
